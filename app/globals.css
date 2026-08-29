@@ -147,8 +147,8 @@ section:not(.hero) { margin-bottom: 96px; }
 }
 
 .work-logo img { display: block; width: auto; height: auto; }
-.walmart-logo img { width: 230px; filter: brightness(0); }
-.rtx-logo img { width: 106px; }
+.walmart-logo img { width: 280px; filter: brightness(0); }
+.rtx-logo img { width: 138px; }
 
 .card-copy { padding-top: 0; }
 
@@ -176,8 +176,8 @@ section:not(.hero) { margin-bottom: 96px; }
   object-fit: contain;
 }
 
-.one-kit-mark img { width: 68px; }
-.doxin-mark img { width: 90px; }
+.one-kit-mark img { width: 44px; }
+.doxin-mark img { width: 65px; }
 
 .small-grid {
   display: grid;
