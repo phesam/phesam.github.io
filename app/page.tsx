@@ -43,7 +43,9 @@ export default function Home() {
         </div>
         <div className="work-grid">
           <article className="work-card">
-            <p className="company-name">Walmart Global Tech</p>
+            <div className="work-logo walmart-logo">
+              <img src="/walmart-global-tech-logo.svg" alt="Walmart Global Tech" />
+            </div>
             <div className="card-copy">
               <p className="meta">Software Engineer II · 2025—Now</p>
               <h3>Seller Center Core</h3>
@@ -56,7 +58,9 @@ export default function Home() {
           </article>
 
           <article className="work-card">
-            <p className="company-name">RTX</p>
+            <div className="work-logo rtx-logo">
+              <img src="/rtx-logo.svg" alt="RTX" />
+            </div>
             <div className="card-copy">
               <p className="meta">Software / ML Engineer · 2025</p>
               <h3>Airborne threat analysis</h3>
@@ -108,7 +112,7 @@ export default function Home() {
       <section>
         <div className="section-head">
           <h2>Other builds</h2>
-          <span>Games, systems, and experiments</span>
+          <span>Independent projects</span>
         </div>
         <div className="small-grid">
           <article>
@@ -122,7 +126,7 @@ export default function Home() {
             <p>Offline LeetCode practice powered by Ollama.</p>
           </a>
           <a href={links.layoutCopilot} target="_blank" rel="noreferrer">
-            <p className="meta">Experiment</p>
+            <p className="meta">Optimization tooling</p>
             <h3>Layout Copilot <Arrow /></h3>
             <p>Factory-layout optimization from constraints to CAD.</p>
           </a>
