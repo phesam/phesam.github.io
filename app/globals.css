@@ -50,9 +50,10 @@ nav a:hover, footer a:hover { color: #000; }
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 220px;
-  gap: clamp(48px, 9vw, 110px);
+  grid-template-columns: minmax(0, 580px) 260px;
+  gap: 56px;
   align-items: center;
+  justify-content: start;
   padding: clamp(76px, 11vw, 120px) 0 clamp(90px, 13vw, 138px);
 }
 
@@ -90,11 +91,11 @@ h1 {
 }
 
 .portrait {
-  width: 100%;
-  aspect-ratio: 3 / 5;
+  width: 260px;
+  max-width: 100%;
+  height: auto;
   border-radius: 2px;
-  object-fit: cover;
-  object-position: left center;
+  display: block;
 }
 
 section:not(.hero) { margin-bottom: 96px; }
@@ -121,46 +122,40 @@ section:not(.hero) { margin-bottom: 96px; }
 .work-grid, .feature-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 28px;
+  gap: 0;
 }
 
-.work-card, .feature { display: block; }
+.work-card, .feature { display: block; margin: 0; }
 
-.mark-panel {
-  display: grid;
-  place-items: center;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  background: #fff;
+.work-grid > :first-child,
+.feature-grid > :first-child {
+  padding-right: 28px;
 }
 
-.work-mark {
+.work-grid > :last-child,
+.feature-grid > :last-child {
+  padding-left: 28px;
+  border-left: 1px solid var(--line);
+}
+
+.product-mark {
   display: flex;
   align-items: center;
-  justify-content: center;
+  height: 64px;
+  margin-bottom: 26px;
 }
 
-.walmart-wordmark {
-  font-size: clamp(35px, 5vw, 54px);
-  font-weight: 750;
-  letter-spacing: -.055em;
+.company-name {
+  min-height: 64px;
+  margin: 0 0 26px;
+  display: flex;
+  align-items: center;
+  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+  font-size: 27px;
+  letter-spacing: -.035em;
 }
 
-.walmart-wordmark span {
-  margin-left: .18em;
-  font-size: .7em;
-  font-weight: 400;
-  vertical-align: .08em;
-}
-
-.rtx-wordmark {
-  font-size: clamp(62px, 9vw, 96px);
-  font-weight: 800;
-  letter-spacing: -.09em;
-}
-
-.card-copy { padding-top: 17px; }
+.card-copy { padding-top: 0; }
 
 .card-copy h3, .small-grid h3 {
   margin: 5px 0 7px;
@@ -177,11 +172,7 @@ section:not(.hero) { margin-bottom: 96px; }
 
 .previous { padding-top: 10px; font-size: 13px; }
 
-.work-card:hover h3, .feature:hover h3, .small-grid a:hover h3 { text-decoration: underline; text-underline-offset: 4px; }
-
-.product-mark {
-  aspect-ratio: 4 / 3;
-}
+.feature:hover h3, .small-grid a:hover h3 { text-decoration: underline; text-underline-offset: 4px; }
 
 .product-mark img {
   display: block;
@@ -190,8 +181,8 @@ section:not(.hero) { margin-bottom: 96px; }
   object-fit: contain;
 }
 
-.one-kit-mark img { width: min(25%, 116px); }
-.doxin-mark img { width: min(42%, 190px); }
+.one-kit-mark img { width: 52px; }
+.doxin-mark img { width: 98px; }
 
 .small-grid {
   display: grid;
@@ -221,14 +212,19 @@ footer a { color: var(--ink); font-weight: 550; }
 
 @media (max-width: 760px) {
   main { width: min(100% - 32px, 1020px); }
-  .hero { grid-template-columns: minmax(0, 1fr) 130px; gap: 24px; }
+  .hero { grid-template-columns: minmax(0, 1fr) 180px; gap: 32px; }
   .work-grid, .feature-grid { grid-template-columns: 1fr; gap: 48px; }
+  .work-grid > :first-child,
+  .feature-grid > :first-child { padding-right: 0; }
+  .work-grid > :last-child,
+  .feature-grid > :last-child { padding-left: 0; border-left: 0; }
   .small-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 36px; }
 }
 
 @media (max-width: 480px) {
   nav { gap: 14px; }
-  .hero { grid-template-columns: minmax(0, 1fr) 104px; padding: 54px 0 76px; }
+  .hero { grid-template-columns: 1fr; gap: 34px; padding: 54px 0 76px; }
+  .portrait { width: 200px; }
   h1 { font-size: 40px; }
   .lead { font-size: 19px; }
   .sublead { font-size: 14px; }

@@ -1,8 +1,6 @@
 const Arrow = () => <span aria-hidden="true">↗</span>;
 
 const links = {
-  walmart: 'https://tech.walmart.com/',
-  rtx: 'https://capstone.cs.uci.edu/student-industry-teams-2025/',
   oneKit: 'https://onekit.co/',
   doxin: 'https://doxin.app/',
   layoutCopilot: 'https://layout-copilot.vercel.app/',
@@ -44,34 +42,30 @@ export default function Home() {
           <span>Selected experience</span>
         </div>
         <div className="work-grid">
-          <a className="work-card" href={links.walmart} target="_blank" rel="noreferrer">
-            <div className="mark-panel work-mark" aria-hidden="true">
-              <span className="walmart-wordmark">Walmart<span>✦</span></span>
-            </div>
+          <article className="work-card">
+            <p className="company-name">Walmart Global Tech</p>
             <div className="card-copy">
               <p className="meta">Software Engineer II · 2025—Now</p>
-              <h3>Seller Center Core <Arrow /></h3>
+              <h3>Seller Center Core</h3>
               <p>
                 Building seller-facing products and the platform behind Walmart
                 Marketplace&apos;s Seller Center.
               </p>
               <p className="previous">Previously, Software Engineer Intern · 2024</p>
             </div>
-          </a>
+          </article>
 
-          <a className="work-card" href={links.rtx} target="_blank" rel="noreferrer">
-            <div className="mark-panel work-mark" aria-hidden="true">
-              <span className="rtx-wordmark">RTX</span>
-            </div>
+          <article className="work-card">
+            <p className="company-name">RTX</p>
             <div className="card-copy">
               <p className="meta">Software / ML Engineer · 2025</p>
-              <h3>Airborne threat analysis <Arrow /></h3>
+              <h3>Airborne threat analysis</h3>
               <p>
                 Built a real-time anomaly-detection system for congested
                 airspace. Won 2nd place at UCI Capstone.
               </p>
             </div>
-          </a>
+          </article>
         </div>
       </section>
 
@@ -82,7 +76,7 @@ export default function Home() {
         </div>
         <div className="feature-grid">
           <a className="feature" href={links.oneKit} target="_blank" rel="noreferrer">
-            <div className="mark-panel product-mark one-kit-mark">
+            <div className="product-mark one-kit-mark">
               <img src="/onekit-logo.svg" alt="OneKit" />
             </div>
             <div className="card-copy">
@@ -96,7 +90,7 @@ export default function Home() {
           </a>
 
           <a className="feature" href={links.doxin} target="_blank" rel="noreferrer">
-            <div className="mark-panel product-mark doxin-mark">
+            <div className="product-mark doxin-mark">
               <img src="/doxin-logo.png" alt="Doxin" />
             </div>
             <div className="card-copy">
