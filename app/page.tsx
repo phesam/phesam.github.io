@@ -1,133 +1,154 @@
-type Item = {
-  name: string;
-  description: string;
-  href?: string;
+const Arrow = () => <span aria-hidden="true">↗</span>;
+
+const links = {
+  walmart: 'https://tech.walmart.com/',
+  rtx: 'https://capstone.cs.uci.edu/student-industry-teams-2025/',
+  oneKit: 'https://onekit.co/',
+  doxin: 'https://doxin.app/',
+  aircode: 'https://github.com/phesam/aircode',
+  github: 'https://github.com/phesam',
+  linkedin: 'https://www.linkedin.com/in/parsa-hesam',
+  uci: 'https://ics.uci.edu/',
 };
-
-const work: Item[] = [
-  {
-    name: 'Walmart Global Tech',
-    description:
-      'Software Engineer II on Seller Center Core. I build seller-facing products and the platform behind them across React, TypeScript, Node, GraphQL, Kubernetes, observability, and analytics.',
-  },
-  {
-    name: 'Walmart Global Tech — Internship',
-    description:
-      'Solo-built an internal engineering documentation platform and the tooling that migrates and synchronizes its docs. It is still used in new-engineer onboarding.',
-  },
-  {
-    name: 'OneKit',
-    description:
-      'Co-founded a cross-platform AI workspace and led engineering. Built its MCP-compatible agent runtime, multi-tenant backend, native integrations, billing, and distribution; managed two engineering interns.',
-  },
-  {
-    name: 'Doxin',
-    description:
-      'Built an agent-native knowledge layer with organization-scoped hybrid search, version history, and five MCP tools for reading and writing engineering knowledge.',
-  },
-];
-
-const projects: Item[] = [
-  {
-    name: 'AeroAI',
-    description:
-      'RTX-sponsored airborne-threat analysis system built with real flight data, PyTorch, Captum, Redis, AWS, Flask, and Leaflet. Won 2nd place at UCI Capstone.',
-  },
-  {
-    name: 'Snipe or Die!',
-    description:
-      'Co-developed an unreleased round-based Roblox FPS in Lua with persistent weapons, skins, and currency systems. Its marketing reached 2M+ views on TikTok.',
-  },
-  {
-    name: 'Aircode',
-    href: 'https://github.com/phesam/aircode',
-    description: 'Offline LeetCode practice powered by Ollama.',
-  },
-  {
-    name: 'Custom Heap Allocator',
-    description:
-      'Implemented malloc, free, and realloc in C with best-fit allocation, boundary tags, splitting, coalescing, and an explicit free list.',
-  },
-  {
-    name: 'Concurrent TCP Server',
-    description:
-      'Built a thread-per-client C server with synchronized shared state, reader-writer locking, logging, and signal-driven shutdown.',
-  },
-  {
-    name: 'Bare-Metal Piano Recorder',
-    description:
-      'Programmed GPIO, PWM, and I2C registers on a TI microcontroller for keypad input, audio, EEPROM-backed recording, and playback.',
-  },
-  {
-    name: 'Structured-Light 3D Reconstruction',
-    description:
-      'Built a stereo-vision pipeline for reconstructing and aligning 3D point clouds from multi-view structured-light images.',
-  },
-];
-
-function List({ title, items }: { title: string; items: Item[] }) {
-  return (
-    <section>
-      <h2>{title}</h2>
-      <ul>
-        {items.map(({ name, description, href }) => (
-          <li key={name}>
-            {href ? (
-              <a href={href} target="_blank" rel="noreferrer">
-                {name}
-              </a>
-            ) : (
-              <strong>{name}</strong>
-            )}
-            : {description}
-          </li>
-        ))}
-      </ul>
-    </section>
-  );
-}
 
 export default function Home() {
   return (
     <main>
-      <h1>Hey, I&apos;m Parsa</h1>
+      <header className="topbar">
+        <a className="brand" href="#top">Parsa Hesam</a>
+        <nav aria-label="Social links">
+          <a href={links.github} target="_blank" rel="noreferrer">GitHub</a>
+          <a href={links.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+        </nav>
+      </header>
 
-      <nav aria-label="Social links">
-        <a href="https://github.com/phesam" target="_blank" rel="noreferrer">
-          GitHub
-        </a>
-        <span>·</span>
-        <a
-          href="https://www.linkedin.com/in/parsa-hesam"
-          target="_blank"
-          rel="noreferrer"
-        >
-          LinkedIn
-        </a>
-      </nav>
-
-      <div className="intro">
-        <p>
-          I&apos;m a software engineer and builder based in Sunnyvale. At Walmart
-          Global Tech, I work on the product and platform behind Seller Center.
-        </p>
-        <p>
-          I like building end to end: interfaces, backend services, agent
-          infrastructure, deployment, and observability. Outside work, I&apos;ve
-          co-founded OneKit, built Doxin, and spent time in systems, embedded
-          software, and computer vision.
-        </p>
-      </div>
-
-      <List title="Work" items={work} />
-      <List title="Projects" items={projects} />
+      <section className="hero" id="top">
+        <div>
+          <p className="kicker">Software Engineer II · Sunnyvale</p>
+          <h1>Hey, I&apos;m Parsa.</h1>
+          <p className="lead">
+            I build products, platforms, and agent systems—from the interface
+            to the infrastructure underneath it.
+          </p>
+          <p className="sublead">
+            Currently at Walmart Global Tech. Previously RTX, and still building
+            OneKit and Doxin on the side.
+          </p>
+        </div>
+        <img className="portrait" src="/parsa.png" alt="Parsa Hesam" />
+      </section>
 
       <section>
-        <h2>Education</h2>
-        <p>
-          <strong>UC Irvine</strong>: B.S. Computer Science, 2025.
-        </p>
+        <div className="section-head">
+          <h2>Work</h2>
+          <span>Selected experience</span>
+        </div>
+        <div className="work-grid">
+          <a className="work-card" href={links.walmart} target="_blank" rel="noreferrer">
+            <div className="work-art walmart-art">
+              <span>Walmart</span>
+              <small>Global Tech</small>
+            </div>
+            <div className="card-copy">
+              <p className="meta">Software Engineer II · 2025—Now</p>
+              <h3>Seller Center Core <Arrow /></h3>
+              <p>
+                Building seller-facing products and the platform behind Walmart
+                Marketplace&apos;s Seller Center.
+              </p>
+              <p className="previous">Previously, Software Engineer Intern · 2024</p>
+            </div>
+          </a>
+
+          <a className="work-card" href={links.rtx} target="_blank" rel="noreferrer">
+            <div className="work-art rtx-art">
+              <span>RTX</span>
+              <small>Raytheon × UCI</small>
+            </div>
+            <div className="card-copy">
+              <p className="meta">Software / ML Engineer · 2025</p>
+              <h3>Airborne threat analysis <Arrow /></h3>
+              <p>
+                Built a real-time anomaly-detection system for congested
+                airspace. Won 2nd place at UCI Capstone.
+              </p>
+            </div>
+          </a>
+        </div>
       </section>
+
+      <section>
+        <div className="section-head">
+          <h2>Products</h2>
+          <span>Founder work</span>
+        </div>
+        <div className="feature-grid">
+          <a className="feature" href={links.oneKit} target="_blank" rel="noreferrer">
+            <div className="media one-kit-media">
+              <img src="/onekit.webp" alt="OneKit product illustration" />
+            </div>
+            <div className="card-copy">
+              <p className="meta">Co-founder · Engineering lead</p>
+              <h3>OneKit <Arrow /></h3>
+              <p>
+                A cross-platform AI workspace with an MCP-compatible agent
+                runtime, native integrations, and a multi-tenant backend.
+              </p>
+            </div>
+          </a>
+
+          <a className="feature" href={links.doxin} target="_blank" rel="noreferrer">
+            <div className="media doxin-media">
+              <img src="/doxin.jpg" alt="Doxin knowledge workspace" />
+            </div>
+            <div className="card-copy">
+              <p className="meta">Founder · Engineer</p>
+              <h3>Doxin <Arrow /></h3>
+              <p>
+                An agent-native knowledge layer with hybrid retrieval, version
+                history, and five MCP tools for reading and writing knowledge.
+              </p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section>
+        <div className="section-head">
+          <h2>Other builds</h2>
+          <span>Games, systems, and experiments</span>
+        </div>
+        <div className="small-grid">
+          <article>
+            <p className="meta">Game systems</p>
+            <h3>Snipe or Die!</h3>
+            <p>Unreleased Roblox FPS; its marketing reached 2M+ views.</p>
+          </article>
+          <a href={links.aircode} target="_blank" rel="noreferrer">
+            <p className="meta">Local AI</p>
+            <h3>Aircode <Arrow /></h3>
+            <p>Offline LeetCode practice powered by Ollama.</p>
+          </a>
+          <article>
+            <p className="meta">Systems in C</p>
+            <h3>Allocator + TCP server</h3>
+            <p>Memory management, concurrency, sockets, and synchronization.</p>
+          </article>
+          <article>
+            <p className="meta">Embedded + vision</p>
+            <h3>Piano + 3D reconstruction</h3>
+            <p>Bare-metal recording hardware and structured-light point clouds.</p>
+          </article>
+        </div>
+      </section>
+
+      <footer>
+        <p>
+          B.S. Computer Science,{' '}
+          <a href={links.uci} target="_blank" rel="noreferrer">UC Irvine <Arrow /></a>
+        </p>
+        <a href={links.linkedin} target="_blank" rel="noreferrer">Get in touch <Arrow /></a>
+      </footer>
     </main>
   );
 }
