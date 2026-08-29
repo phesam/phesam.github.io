@@ -5,6 +5,7 @@ const links = {
   rtx: 'https://capstone.cs.uci.edu/student-industry-teams-2025/',
   oneKit: 'https://onekit.co/',
   doxin: 'https://doxin.app/',
+  layoutCopilot: 'https://layout-copilot.vercel.app/',
   aircode: 'https://github.com/phesam/aircode',
   github: 'https://github.com/phesam',
   linkedin: 'https://www.linkedin.com/in/parsa-hesam',
@@ -24,15 +25,14 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div>
-          <p className="kicker">Software Engineer II · Sunnyvale</p>
           <h1>Hey, I&apos;m Parsa.</h1>
           <p className="lead">
             I build products, platforms, and agent systems—from the interface
             to the infrastructure underneath it.
           </p>
           <p className="sublead">
-            Currently at Walmart Global Tech. Previously RTX, and still building
-            OneKit and Doxin on the side.
+            Currently at Walmart Global Tech. Previously at RTX. I also
+            co-founded OneKit and built Doxin.
           </p>
         </div>
         <img className="portrait" src="/parsa.png" alt="Parsa Hesam" />
@@ -45,9 +45,8 @@ export default function Home() {
         </div>
         <div className="work-grid">
           <a className="work-card" href={links.walmart} target="_blank" rel="noreferrer">
-            <div className="work-art walmart-art">
-              <span>Walmart</span>
-              <small>Global Tech</small>
+            <div className="mark-panel work-mark" aria-hidden="true">
+              <span className="walmart-wordmark">Walmart<span>✦</span></span>
             </div>
             <div className="card-copy">
               <p className="meta">Software Engineer II · 2025—Now</p>
@@ -61,9 +60,8 @@ export default function Home() {
           </a>
 
           <a className="work-card" href={links.rtx} target="_blank" rel="noreferrer">
-            <div className="work-art rtx-art">
-              <span>RTX</span>
-              <small>Raytheon × UCI</small>
+            <div className="mark-panel work-mark" aria-hidden="true">
+              <span className="rtx-wordmark">RTX</span>
             </div>
             <div className="card-copy">
               <p className="meta">Software / ML Engineer · 2025</p>
@@ -84,8 +82,8 @@ export default function Home() {
         </div>
         <div className="feature-grid">
           <a className="feature" href={links.oneKit} target="_blank" rel="noreferrer">
-            <div className="media one-kit-media">
-              <img src="/onekit.webp" alt="OneKit product illustration" />
+            <div className="mark-panel product-mark one-kit-mark">
+              <img src="/onekit-logo.svg" alt="OneKit" />
             </div>
             <div className="card-copy">
               <p className="meta">Co-founder · Engineering lead</p>
@@ -98,8 +96,8 @@ export default function Home() {
           </a>
 
           <a className="feature" href={links.doxin} target="_blank" rel="noreferrer">
-            <div className="media doxin-media">
-              <img src="/doxin.jpg" alt="Doxin knowledge workspace" />
+            <div className="mark-panel product-mark doxin-mark">
+              <img src="/doxin-logo.png" alt="Doxin" />
             </div>
             <div className="card-copy">
               <p className="meta">Founder · Engineer</p>
@@ -129,10 +127,20 @@ export default function Home() {
             <h3>Aircode <Arrow /></h3>
             <p>Offline LeetCode practice powered by Ollama.</p>
           </a>
+          <a href={links.layoutCopilot} target="_blank" rel="noreferrer">
+            <p className="meta">Experiment</p>
+            <h3>Layout Copilot <Arrow /></h3>
+            <p>Factory-layout optimization from constraints to CAD.</p>
+          </a>
           <article>
-            <p className="meta">Systems in C</p>
-            <h3>Allocator + TCP server</h3>
-            <p>Memory management, concurrency, sockets, and synchronization.</p>
+            <p className="meta">Systems · C</p>
+            <h3>Heap allocator</h3>
+            <p>A malloc-style allocator with splitting and coalescing.</p>
+          </article>
+          <article>
+            <p className="meta">Systems · C</p>
+            <h3>Concurrent TCP server</h3>
+            <p>Threaded sockets, synchronization, and clean shutdowns.</p>
           </article>
           <article>
             <p className="meta">Embedded + vision</p>

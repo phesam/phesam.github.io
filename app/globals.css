@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
+
 :root {
-  --paper: #f6f5f1;
-  --ink: #1b1b19;
-  --muted: #6f6e68;
-  --line: #cfcdc4;
+  --paper: #fff;
+  --ink: #000;
+  --muted: #5f5f5f;
+  --line: #000;
 }
 
 * { box-sizing: border-box; }
@@ -11,7 +13,7 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Plus Jakarta Sans', 'Helvetica Neue', Arial, sans-serif;
   font-size: 15px;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
@@ -51,10 +53,10 @@ nav a:hover, footer a:hover { color: #000; }
   grid-template-columns: minmax(0, 1fr) 220px;
   gap: clamp(48px, 9vw, 110px);
   align-items: center;
-  padding: clamp(70px, 11vw, 118px) 0 clamp(90px, 13vw, 140px);
+  padding: clamp(76px, 11vw, 120px) 0 clamp(90px, 13vw, 138px);
 }
 
-.kicker, .meta {
+.meta {
   margin: 0;
   color: var(--muted);
   font-size: 11px;
@@ -64,8 +66,8 @@ nav a:hover, footer a:hover { color: #000; }
 }
 
 h1 {
-  margin: 13px 0 24px;
-  font-family: Georgia, 'Times New Roman', serif;
+  margin: 0 0 24px;
+  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
   font-size: clamp(48px, 7vw, 76px);
   font-weight: 400;
   letter-spacing: -.05em;
@@ -92,7 +94,7 @@ h1 {
   aspect-ratio: 3 / 5;
   border-radius: 2px;
   object-fit: cover;
-  object-position: 29% center;
+  object-position: left center;
 }
 
 section:not(.hero) { margin-bottom: 96px; }
@@ -124,20 +126,39 @@ section:not(.hero) { margin-bottom: 96px; }
 
 .work-card, .feature { display: block; }
 
-.work-art {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.mark-panel {
+  display: grid;
+  place-items: center;
   aspect-ratio: 16 / 9;
-  padding: 26px;
-  color: white;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #fff;
 }
 
-.work-art span { font-size: clamp(30px, 4vw, 46px); font-weight: 650; letter-spacing: -.05em; }
-.work-art small { font-size: 13px; letter-spacing: .05em; text-transform: uppercase; }
-.walmart-art { background: #0866aa; }
-.rtx-art { background: #1d252c; }
-.rtx-art span { font-size: clamp(58px, 8vw, 90px); letter-spacing: -.08em; }
+.work-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.walmart-wordmark {
+  font-size: clamp(35px, 5vw, 54px);
+  font-weight: 750;
+  letter-spacing: -.055em;
+}
+
+.walmart-wordmark span {
+  margin-left: .18em;
+  font-size: .7em;
+  font-weight: 400;
+  vertical-align: .08em;
+}
+
+.rtx-wordmark {
+  font-size: clamp(62px, 9vw, 96px);
+  font-weight: 800;
+  letter-spacing: -.09em;
+}
 
 .card-copy { padding-top: 17px; }
 
@@ -158,19 +179,23 @@ section:not(.hero) { margin-bottom: 96px; }
 
 .work-card:hover h3, .feature:hover h3, .small-grid a:hover h3 { text-decoration: underline; text-underline-offset: 4px; }
 
-.media {
+.product-mark {
   aspect-ratio: 4 / 3;
-  overflow: hidden;
-  background: #e8e6df;
 }
 
-.media img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.one-kit-media img { object-position: center; }
-.doxin-media img { object-position: left center; }
+.product-mark img {
+  display: block;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.one-kit-mark img { width: min(25%, 116px); }
+.doxin-mark img { width: min(42%, 190px); }
 
 .small-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
 }
 
