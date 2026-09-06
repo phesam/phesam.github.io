@@ -187,7 +187,6 @@ section:not(.hero) { margin-bottom: 96px; }
 
 .small-grid article, .small-grid > a {
   padding-top: 14px;
-  border-top: 1px solid var(--line);
 }
 
 .small-grid h3 { font-size: 17px; }
